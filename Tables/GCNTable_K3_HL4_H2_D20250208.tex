@@ -1,0 +1,16 @@
+﻿\begin{table}[h]
+\centering
+\caption{Resultados experimentais da GCN em 2025-02-08, com k=3, HL=4, hidden=2 e lr=0.001.}
+\label{tab:gcn_results_k3_hl4_h2_d20250208}
+\begin{tabular}{ccccccccccccc}
+\toprule
+epochs & hidden & n\_hidden\_layers & best\_epoch & stop\_epoch & loss\_train & loss\_val & loss\_test & mae\_train & mae\_val & mae\_test & pred & true \\
+\midrule
+100 & 2 & 4 & 100 & 100 & 0.067896 & 0.163677 & 0.052134 & 0.195091 & 0.278336 & 0.161994 & -0.105324 & 0.000000 \\
+200 & 2 & 4 & 200 & 200 & 0.044583 & 0.128102 & 0.033697 & 0.121441 & 0.204686 & 0.088344 & -0.031674 & 0.000000 \\
+400 & 2 & 4 & 399 & 400 & 0.031075 & 0.100236 & 0.025897 & 0.114529 & 0.172127 & 0.084615 & 0.054563 & 0.000000 \\
+500 & 2 & 4 & 498 & 500 & 0.030097 & 0.096086 & 0.026179 & 0.123831 & 0.178476 & 0.099369 & 0.073610 & 0.000000 \\
+1000 & 2 & 4 & 772 & 832 & 0.029837 & 0.093308 & 0.026921 & 0.131219 & 0.183518 & 0.112169 & 0.088738 & 0.000000 \\
+\bottomrule
+\end{tabular}
+\end{table}

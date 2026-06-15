@@ -1,0 +1,82 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[landscape,margin=0.75cm]{geometry}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{pgffor}
+\usepackage{caption}
+
+\captionsetup{
+  font=scriptsize,
+  labelfont=bf,
+  aboveskip=2pt,
+  belowskip=2pt
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{1.2pt}
+\renewcommand{\arraystretch}{0.68}
+
+\makeatletter
+\renewenvironment{table}[1][]{%
+  \par\begingroup
+  \def\@captype{table}%
+  \centering
+  \tiny
+}{%
+  \par\endgroup
+}
+\makeatother
+
+\newcounter{tabelasnapagina}
+
+\newcommand{\TabelaLoss}[7]{%
+  \begin{center}
+    {\normalsize\bfseries Data #7 -- #1 -- $k=#2$, HL=#3, hidden=#4, epochs=#5}
+  \end{center}
+
+  \vspace{-0.25cm}
+
+  \IfFileExists{Tables_Loss/#1LossTable_K#2_HL#3_H#4_E#5_D#6.tex}{%
+    \input{Tables_Loss/#1LossTable_K#2_HL#3_H#4_E#5_D#6.tex}
+  }{%
+    \begin{center}
+      \textbf{Tabela nao encontrada:}
+      Tables\_Loss/#1LossTable\_K#2\_HL#3\_H#4\_E#5\_D#6.tex
+    \end{center}
+  }
+
+  \stepcounter{tabelasnapagina}
+  \ifodd\value{tabelasnapagina}
+    \vspace{-0.1cm}
+  \else
+    \clearpage
+  \fi
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Relatorio de Tabelas de Loss}\\[4pt]
+  {\large GNN e GCN organizados por data, $k$, camadas ocultas, epochs e hidden}\\[2pt]
+  {\normalsize Para cada bloco de epochs, os hiddens aparecem agrupados na ordem $2,6,12,24$.}
+\end{center}
+
+\clearpage
+
+\foreach \datafile/\datalabel in {20240504/2024-05-04,20250112/2025-01-12,20250208/2025-02-08} {
+  \foreach \kvalor in {2,3,61} {
+    \foreach \hlvalor in {2,4,6} {
+      \foreach \modelo in {GNN,GCN} {
+        \foreach \epoca in {100,200,400,500,1000} {
+          \foreach \hiddenvalor in {2,6,12,24} {
+            \TabelaLoss{\modelo}{\kvalor}{\hlvalor}{\hiddenvalor}{\epoca}{\datafile}{\datalabel}
+          }
+        }
+      }
+    }
+  }
+}
+
+\end{document}
