@@ -222,9 +222,5 @@ __marimo__/
 
 # Generated images
 *.png
-*.pdf
 
 # Alguns arquivos não são necessários
-
-PDFs\GNN_v_GCN.pdf
-PDFs\NotesGNN.pdf
