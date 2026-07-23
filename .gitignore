@@ -223,20 +223,12 @@ __marimo__/
 # Generated images
 *.png
 
-# PDFs do projeto
-/PDFs/PrimeirosBenchmarks.pdf
-/PDFs/NotesGNN.pdf
-/PDFs/notacao_gnn_ponderada.pdf
-/PDFs/notacao_gnn_pesos_brutos.pdf
-/PDFs/GNN_v_GCN.pdf
-/PDFs/Calculo_Pesos_Arestas_GNN.pdf
-
 # Alguns arquivos não são necessários
 
 # Result folders
+PDFs/
 Results/
 Results_WGNN_SNorm/
 Results_WGNN/
 Tables/
 Tables_Loss/
-PDFs/
