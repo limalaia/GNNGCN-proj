@@ -226,8 +226,8 @@ __marimo__/
 # Alguns arquivos não são necessários
 
 # Result folders
+Results/
 Results_WGNN_SNorm/
 Results_WGNN/
 Tables/
 Tables_Loss/
-Results/
