@@ -228,3 +228,6 @@ __marimo__/
 # Result folders
 Results_WGNN_SNorm/
 Results_WGNN/
+Tables/
+Tables_Loss/
+Results/
