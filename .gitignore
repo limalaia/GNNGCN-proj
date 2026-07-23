@@ -224,3 +224,7 @@ __marimo__/
 *.png
 
 # Alguns arquivos não são necessários
+
+# Result folders
+Results_WGNN_SNorm/
+Results_WGNN/
